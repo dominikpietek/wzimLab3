@@ -1,0 +1,85 @@
+
+app/services/client.py
+# ==============================
+# 🐍 Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+.vscode
+# C extensions
+*.so
+
+# ==============================
+# 📦 Environments
+# ==============================
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================
+# 🧰 IDEs & Editors
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# ==============================
+# 🧱 Build / Packaging
+# ==============================
+build/
+# ==============================
+# 📜 Logs & Reports
+# ==============================
+*.log
+*.out
+*.err
+logs/
+celerybeat-schedule
+*.pid
+
+
+# ==============================
+# 📚 Type checking / Linting
+# ==============================
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+
+# ==============================
+# ⚙️ FastAPI / Uvicorn
+# ==============================
+*.db
+*.sqlite3
+*.sqlite
+*.pid
+staticfiles/
+media/
+app/__pycache__/
+tmp/
+
+# ==============================
+# 💾 Ollama / AI / Cache
+# ==============================
+ollama_models/
+ollama_cache/
+cache/
+tmp/
+*.jsonl
+
+# ==============================
+# 🧠 PyInstaller
+# ==============================
+*.manifest
+*.spec
+*.exe
+*.dll
+*.pkg
