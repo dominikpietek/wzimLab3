@@ -12,6 +12,7 @@ class NPCChatResponse(BaseModel):
 
 
 class NPCChatRequest(BaseModel):
+    scenarioID: str = Field()
     sceneContext: str = Field()
     playerText: str = Field()
     npcName: str = Field()
@@ -20,6 +21,7 @@ class NPCChatRequest(BaseModel):
 
 # Scene Schemas
 class SceneLoadRequest(BaseModel):
+    scenarioID: str = Field()
     locationName: str = Field()
     scenePrompt: str = Field()
 
