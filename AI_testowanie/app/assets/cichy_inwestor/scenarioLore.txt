@@ -1,0 +1,74 @@
+Baza Wiedzy: Scenariusz "Cichy Inwestor"
+
+1. Ofiara:
+Imię i nazwisko: Robert Majewski
+Wiek: 52 lata
+Zawód: Właściciel ekskluzywnej restauracji "Złoty Liść".
+Opis: Znany z bycia wymagającym szefem, ale też z wizją. Ostatnio borykał się z problemami finansowymi, o czym wiedziało niewiele osób. Był rozwiedziony.
+
+2. Miejsce i Czas Zbrodni:
+Miejsce: Biuro Roberta Majewskiego, na tyłach restauracji "Złoty Liść".
+Czas: Wtorek, między 22:00 a 23:00 (po zamknięciu restauracji).
+Przyczyna śmierci: Pojedynczy cios ciężkim, tępym narzędziem w tył głowy.
+Narzędzie zbrodni: Ciężka statuetka "Złotego Widelca" (nagroda branżowa), która normalnie stała na biurku ofiary. Znaleziono ją obok ciała, ze śladami krwi.
+Dodatkowe uwagi: Biuro jest w nieładzie, sugerującym krótką szamotaninę. Na biurku leży otwarta butelka drogiej whisky i dwie szklanki. Sejf w rogu pokoju jest otwarty i pusty.
+
+3. Odkrycie Ciała:
+Ciało zostało znalezione następnego dnia (środa) rano, około 8:00, przez kelnerkę (NPC 1), która przyszła przygotować lokal do otwarcia.
+
+4. Kluczowe Postacie (NPC / Świadkowie)
+
+NPC 1: Anna "Ania" Zalewska (Kelnerka)
+Rola: Główna kelnerka, pracuje w "Złotym Liściu" od 3 lat. Znalazła ciało.
+Relacja z ofiarą: Mieszana. Szanowała go jako szefa, ale uważała, że ostatnio stał się nerwowy i niesprawiedliwy.
+Alibi: Pracowała do zamknięcia (ok. 22:15). Twierdzi, że poszła prosto do domu. Mieszka sama.
+Informacje Publiczne (co powie):
+"Szef był ostatnio bardzo spięty. Krzyczał na kucharzy, na mnie. Mówił coś o 'braku płynności'."
+"Widziałam, jak wczoraj wieczorem, tuż przed zamknięciem, kłócił się z Panem Sokołowskim (NPC 2). Poszło o pieniądze."
+"Gdy przyszłam rano, drzwi do biura były uchylone. Weszłam i... zobaczyłam go. To było straszne."
+"Zauważyłam, że w biurze były dwie szklanki po whisky. Szef rzadko pił w pracy."
+Prawda / Sekrety (co ukrywa):
+Miała krótki romans z ofiarą pół roku temu. Zakończył go gwałtownie, co ją zraniło.
+Nie jest winna, ale boi się, że jej związek z szefem wyjdzie na jaw i uczyni ją podejrzaną.
+Widziała, jak po kłótni Sokołowski wyszedł wściekły, ale widziała też, jak później (ok. 22:30, gdy już wychodziła) do restauracji tylnymi drzwiami wślizgnął się Kamil (NPC 3).
+
+NPC 2: Marek Sokołowski (Inwestor / "Przyjaciel")
+Rola: Lokalny biznesmen, "cichy wspólnik" Majewskiego.
+Relacja z ofiarą: Oficjalnie przyjaciele. W rzeczywistości Sokołowski pożyczył Majewskiemu duże pieniądze na ratowanie restauracji.
+Alibi: Przyznaje, że był w restauracji ok. 21:30. Twierdzi, że wyszedł po kłótni o 22:00 i pojechał prosto do domu. Żona potwierdzi jego alibi, ale niechętnie.
+Informacje Publiczne (co powie):
+"Robert to był mój przyjaciel. Tak, pożyczyłem mu trochę pieniędzy na biznes, ale wierzyłem w to miejsce."
+"Owszem, pokłóciliśmy się. Był mi winien pieniądze, a ja usłyszałem, że chce sprzedać restaurację za moimi plecami. Ale wyszedłem, żeby ochłonąć. Nie zabiłbym go!"
+"Robert miał ostatnio problemy. Mówił, że ktoś go oszukał. Może ten jego nowy 'cudowny' kucharz (NPC 3)?"
+Prawda / Sekrety (co ukrywa):
+Pożyczka była nielegalna (pochodziła z "szarej strefy"). Majewski nie mógł jej spłacić. Sokołowski groził mu.
+Otwarty sejf? To Sokołowski zabrał z niego podpisane przez Majewskiego weksle i dokumenty pożyczki, aby zatrzeć ślady nielegalnych odsetek.
+Nie jest mordercą, ale spanikował, gdy znalazł Majewskiego martwego (przyszedł po niego po morderstwie, ok. 23:30, zaniepokojony, że ten nie odbiera).
+Znalazł ciało, zabrał dokumenty z sejfu (który był otwarty) i uciekł.
+
+NPC 3: Kamil Nowak (Szef Kuchni)
+Rola: Młody, ambitny szef kuchni, zatrudniony 2 miesiące temu.
+Relacja z ofiarą: Początkowo dobra, Majewski widział w nim gwiazdę. Ostatnio napięta.
+Alibi: Twierdzi, że wyszedł z kuchni zaraz po zamknięciu, ok. 22:00, razem z resztą personelu.
+Informacje Publiczne (co powie):
+"Szef obiecał mi 'złote góry'. Mówił, że będę miał wolną rękę, że to będzie moja autorska kuchnia."
+"Ostatnio wszystko się psuło. Obcinał budżet na produkty, był nerwowy. Nie dało się pracować."
+"Słyszałem jego kłótnię z Sokołowskim. Sokołowski krzyczał, że 'odzyska swoje pieniądze, tak czy inaczej'."
+Prawda / Sekrety (co ukrywa):
+ON JEST ZABÓJCĄ.
+Majewski odkrył, że Kamil Nowak ma poważne długi hazardowe i podkradał pieniądze z kasy restauracji oraz od dostawców (fałszował faktury).
+Tego wieczoru Majewski wezwał go do biura po wyjściu Sokołowskiego (ok. 22:30). Ania widziała, jak Kamil wchodził.
+Majewski powiedział Kamilowi, że wie o kradzieżach i że rano wzywa policję. Zagroził, że zniszczy mu karierę.
+Kamil zaczął błagać, doszło do szamotaniny. Gdy Majewski sięgnął po telefon, by dzwonić na policję, Kamil wpadł w panikę, chwycił statuetkę "Złotego Widelca" z biurka i uderzył go.
+Zabrał z sejfu gotówkę (utarg z kilku dni), aby upozorować rabunek.
+Wziął też notes, w którym Majewski zapisywał swoje podejrzenia co do kradzieży Kamila.
+
+5. Rozwiązanie (Prawda dla GPT)
+Kto: Kamil Nowak (Szef Kuchni).
+Motyw: Strach przed ujawnieniem jego kradzieży i długów hazardowych, co oznaczałoby koniec kariery i więzienie.
+Jak: Po konfrontacji w biurze, Majewski zagroził wezwaniem policji. Kamil w panice uderzył go statuetką. Następnie ukradł pieniądze z otwartego sejfu (Majewski wyjmował z niego dokumenty dla Sokołowskiego wcześniej) oraz notes z dowodami przeciwko niemu, aby upozorować napad rabunkowy.
+Kluczowe Przełamanie: Gracz (detektyw) musi połączyć kropki:
+Problemy finansowe restauracji (od Ani).
+Kłamstwo Kamila co do alibi (Ania widziała, jak wracał).
+Zniknięcie pieniędzy (pozorny rabunek), ale też zniknięcie notesu (co sugeruje motyw osobisty).
+Agresywne zachowanie Sokołowskiego (NPC 2) to mylny trop. Jego sekret (nielegalna pożyczka i zabranie weksli) wyjaśnia jego dziwne zachowanie i pusty sejf, ale nie tłumaczy morderstwa.
