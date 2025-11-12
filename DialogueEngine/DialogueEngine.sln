@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogueEngine", "DialogueEngine\DialogueEngine.csproj", "{3E0CCF31-6162-4241-94F1-511088747164}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOModel", "DTOModel\DTOModel.csproj", "{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E0CCF31-6162-4241-94F1-511088747164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0CCF31-6162-4241-94F1-511088747164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0CCF31-6162-4241-94F1-511088747164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0CCF31-6162-4241-94F1-511088747164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E164DA80-1C38-4600-BCAD-40E4A126136F}
+	EndGlobalSection
+EndGlobal

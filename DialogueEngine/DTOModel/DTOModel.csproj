@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  <UnityPluginsDir>..\..\Gra_detektywistyczna\Assets\Plugins</UnityPluginsDir>
+</PropertyGroup>
+
+<Target Name="CopyToUnity" AfterTargets="Build">
+  <Message Importance="high" Text="Kopiowanie DTOModel.dll do Unity" />
+  <MakeDir Directories="$(UnityPluginsDir)" />
+  <Copy SourceFiles="$(TargetDir)$(TargetName).dll"
+        DestinationFolder="$(UnityPluginsDir)" />
+</Target>
+
+</Project>

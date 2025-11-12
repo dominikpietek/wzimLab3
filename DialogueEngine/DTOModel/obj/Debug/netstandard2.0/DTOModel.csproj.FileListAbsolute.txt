@@ -1,0 +1,11 @@
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\bin\Debug\netstandard2.0\DTOModel.deps.json
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\bin\Debug\netstandard2.0\DTOModel.dll
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\bin\Debug\netstandard2.0\DTOModel.pdb
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.csproj.AssemblyReference.cache
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.AssemblyInfoInputs.cache
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.AssemblyInfo.cs
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.csproj.CoreCompileInputs.cache
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.sourcelink.json
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.dll
+C:\Projects\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.pdb

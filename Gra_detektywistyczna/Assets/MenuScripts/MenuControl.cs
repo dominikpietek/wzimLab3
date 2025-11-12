@@ -1,12 +1,32 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DTOModel;
+using System.Collections.Generic;
 
 public class MenuControl : MonoBehaviour
 {
+    private async void Awake()
+    {
+        await DialogueEngineManager.InitializeManagerAsync(gameObject);
+    }
+
+    private async void OnApplicationQuit()
+    {
+        if (DialogueEngineManager.Instance != null)
+        {
+            await DialogueEngineManager.Instance.QuitManagerAsync();
+        }
+    }
+
+    public MenuControl()
+    {
+        Debug.Log("Start programu!");
+    }
+
     public void BackToMenu()
     {
         SceneManager.LoadScene("MainMenu");
-
     }
 
     public void NewGameScene()
