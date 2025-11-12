@@ -29,9 +29,9 @@ def load_scene(data: SceneLoadRequest):
     """
 
     userPrompt = f"""
-    Wygeneruj scenę dla lokalizacji: "{data.locationName}".
+    Wygeneruj scenę dla lokalizacji: "{data.name}".
     Gracz właśnie wchodzi.
-    Kontekst sceny: "{data.scenePrompt}".
+    Kontekst sceny: "{data.description}".
     
     Wygeneruj porywający opis, 2-3 postacie NPC i 1-2 interaktywne przedmioty.
     """
