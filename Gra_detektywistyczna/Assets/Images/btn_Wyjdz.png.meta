@@ -103,10 +103,10 @@ TextureImporter:
       name: btn_Wyjdz_0
       rect:
         serializedVersion: 2
-        x: 122
-        y: 346
-        width: 782
-        height: 340
+        x: 0
+        y: 0
+        width: 600
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
