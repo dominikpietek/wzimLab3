@@ -32,15 +32,14 @@ def chatWithNpc(data: NPCChatRequest):
 
       BIEŻĄCA SCENA:
       <scene>
-      {data.sceneContext}
+      {data.sceneDescription}
       </scene>
 
       TWOJA POSTAĆ:
       Imię: {data.npcName}
-      Rola: {data.npcRole}
     """
 
-    user_prompt = f"Gracz mówi do Ciebie: \"{data.playerText}\""
+    user_prompt = f"Gracz mówi do Ciebie: \"{data.userText}\""
 
     response = generateStructuredOutput(
         system_prompt,

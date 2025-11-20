@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narrator AI - Panel Mistrza Gry</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --sidebar-bg: #1e1e1e;
+      --card-bg: #252525;
+      --text-main: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --accent: #66bb6a;
+      --accent-hover: #81c784;
+      --border: #333;
+      --input-bg: #2c2c2c;
+      --user-msg-bg: #2e7d32;
+      --npc-msg-bg: #424242;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 300px;
+      min-width: 300px;
+      background-color: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+      gap: 20px;
+      overflow-y: auto;
+      z-index: 10;
+    }
+
+    .sidebar h1 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .sidebar h3 {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 15px 0 5px 0;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+      box-sizing: border-box;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .upload-zone {
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .upload-zone:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: rgba(102, 187, 106, 0.05);
+    }
+
+    .status-text {
+      font-size: 0.8rem;
+      margin-top: 5px;
+      min-height: 1.2em;
+    }
+
+    .action-btn {
+      background-color: var(--accent);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.1s, background-color 0.2s;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .action-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .action-btn:active {
+      transform: scale(0.98);
+    }
+
+    .action-btn:disabled {
+      background-color: #444;
+      color: #888;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .main-area {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .scene-card {
+      flex: 1;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .scene-card h2 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .scene-text {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #dcdcdc;
+      white-space: pre-wrap;
+      overflow-y: auto;
+      flex: 1;
+      padding-right: 10px;
+    }
+
+    .chat-container {
+      flex: 3;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      min-width: 0;
+    }
+
+    .placeholder-text {
+      color: #666;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .chat-header {
+      padding: 15px 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      scroll-behavior: smooth;
+    }
+
+    .msg {
+      max-width: 85%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      line-height: 1.5;
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background-color: var(--user-msg-bg);
+      color: white;
+      border-bottom-right-radius: 2px;
+    }
+
+    .msg.npc {
+      align-self: flex-start;
+      background-color: var(--npc-msg-bg);
+      color: var(--text-main);
+      border-bottom-left-radius: 2px;
+    }
+
+    .msg-name {
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-bottom: 4px;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+
+    .npc-action {
+      font-style: italic;
+      color: #bbb;
+      font-size: 0.95em;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .input-area {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 15px;
+    }
+
+    .input-area input {
+      flex: 1;
+      background-color: var(--bg-color);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 25px;
+    }
+
+    .send-btn {
+      background-color: var(--accent);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+    }
+
+    .send-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .send-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #000;
+      margin-left: 3px;
+    }
+
+    .loader {
+      font-style: italic;
+      color: var(--accent);
+      text-align: center;
+      padding: 10px;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h1>Narrator AI</h1>
+
+    <div>
+      <label for="api-url">Serwer API</label>
+      <input type="text" id="api-url" value="http://127.0.0.1:8000">
+    </div>
+
+    <h3>Scenariusz</h3>
+    <div class="upload-zone" onclick="document.getElementById('file-input').click()">
+      <span id="upload-label">📂 Kliknij, aby wczytać plik JSON</span>
+    </div>
+    <input type="file" id="file-input" accept=".json" style="display: none" onchange="handleFileUpload(this)">
+    <div id="file-status" class="status-text" style="color: #888;">Brak wczytanego świata.</div>
+
+    <h3>Lokalizacja</h3>
+    <select id="scene-select" disabled onchange="onSceneSelect()">
+      <option value="">-- Najpierw wgraj plik --</option>
+    </select>
+    <button id="load-scene-btn" class="action-btn" onclick="loadSceneData()" disabled>
+      Zbuduj Scenę
+    </button>
+
+    <h3>Interakcja</h3>
+    <label>Rozmówca:</label>
+    <select id="npc-select" disabled>
+      <option value="">-- Czekam na scenę --</option>
+    </select>
+  </div>
+
+  <div class="main-area">
+
+    <div class="scene-card">
+      <h2>🎭 Opis Sytuacji</h2>
+      <div id="scene-content" class="scene-text">
+        <div class="placeholder-text">
+          Wybierz scenę z menu po lewej i kliknij "Zbuduj Scenę", aby AI mogło wykreować rzeczywistość...
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-header">Historia Dialogu</div>
+
+      <div id="chat-history" class="chat-messages">
+        <div class="placeholder-text" style="margin-top: 50px;">
+          Tutaj pojawi się przebieg rozmowy.
+        </div>
+      </div>
+
+      <div class="input-area">
+        <input type="text" id="user-input" placeholder="Co robisz lub mówisz?" onkeypress="handleEnter(event)"
+          autocomplete="off">
+        <button class="send-btn" onclick="sendMessage()" title="Wyślij">
+          <svg viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let scenarioData = null;
+    let currentSceneRaw = null;
+    let currentSceneDescription = "";
+
+    function handleFileUpload(input) {
+      const file = input.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const json = JSON.parse(e.target.result);
+
+          if (!json.scenes) {
+            throw new Error("Plik nie wygląda na poprawny scenariusz (brak pola 'scenes').");
+          }
+
+          scenarioData = json;
+
+          document.getElementById('upload-label').innerText = `✅ ${file.name}`;
+          const statusDiv = document.getElementById('file-status');
+          statusDiv.innerText = `Wczytano ${json.scenes.length} scen. Gotowy do gry.`;
+          statusDiv.style.color = "var(--accent)";
+
+          populateSceneList();
+
+        } catch (err) {
+          alert("Nie udało się odczytać pliku: " + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function populateSceneList() {
+      const select = document.getElementById('scene-select');
+      select.innerHTML = '<option value="">-- Wybierz miejsce akcji --</option>';
+
+      scenarioData.scenes.forEach((scene, index) => {
+        const opt = document.createElement('option');
+        opt.value = index;
+        opt.innerText = scene.name;
+        select.appendChild(opt);
+      });
+
+      select.disabled = false;
+    }
+
+    function onSceneSelect() {
+      const idx = document.getElementById('scene-select').value;
+      const btn = document.getElementById('load-scene-btn');
+
+      if (idx !== "") {
+        currentSceneRaw = scenarioData.scenes[idx];
+        btn.disabled = false;
+        btn.innerText = "Zbuduj Scenę";
+
+        fillNpcSelect(currentSceneRaw.npcs);
+      } else {
+        btn.disabled = true;
+      }
+    }
+
+    function fillNpcSelect(npcs) {
+      const select = document.getElementById('npc-select');
+      select.innerHTML = '<option value="">-- Wybierz postać --</option>';
+
+      if (npcs && npcs.length > 0) {
+        npcs.forEach(npc => {
+          const opt = document.createElement('option');
+          opt.value = npc.name;
+          opt.innerText = `${npc.name} (${npc.role})`;
+          select.appendChild(opt);
+        });
+      } else {
+        select.innerHTML = '<option value="">-- Brak nikogo w pobliżu --</option>';
+      }
+      select.disabled = true;
+    }
+
+    async function loadSceneData() {
+      if (!currentSceneRaw) return;
+
+      const apiUrl = document.getElementById('api-url').value;
+      const contentDiv = document.getElementById('scene-content');
+      const btn = document.getElementById('load-scene-btn');
+
+      contentDiv.innerHTML = `<div class="loader">Mistrz Gry (AI) opisuje otoczenie...<br>Może to chwilę potrwać.</div>`;
+      btn.disabled = true;
+      btn.innerText = "Генерация...";
+
+      document.getElementById('chat-history').innerHTML =
+        '<div class="placeholder-text">Nowa scena. Wybierz postać, by rozpocząć interakcję.</div>';
+
+      const payload = {
+        name: currentSceneRaw.name,
+        description: currentSceneRaw.description,
+        npcs: currentSceneRaw.npcs,
+        items: currentSceneRaw.items
+      };
+
+      try {
+        const response = await fetch(`${apiUrl}/scene/load`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error("Błąd serwera: " + response.statusText);
+
+        const data = await response.json();
+        currentSceneDescription = data.extendedDescription;
+
+        contentDiv.innerText = currentSceneDescription;
+
+        document.getElementById('npc-select').disabled = false;
+        btn.innerText = "Zregeneruj Scenę";
+        btn.disabled = false;
+
+      } catch (error) {
+        contentDiv.innerHTML = `<div style="color:#ef5350">Wystąpił błąd: ${error.message}</div>`;
+        btn.disabled = false;
+        btn.innerText = "Spróbuj ponownie";
+      }
+    }
+
+    function handleEnter(e) {
+      if (e.key === 'Enter') sendMessage();
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('user-input');
+      const text = input.value.trim();
+      const npcName = document.getElementById('npc-select').value;
+      const apiUrl = document.getElementById('api-url').value;
+
+      if (!text) return;
+
+      if (!npcName) {
+        alert("Wybierz postać, do której mówisz!");
+        return;
+      }
+      if (!currentSceneDescription) {
+        alert("Najpierw musisz wygenerować scenę!");
+        return;
+      }
+
+      addMessageToChat('user', 'Ty', text);
+      input.value = '';
+
+      const loaderId = addLoaderToChat(`${npcName} думает...`);
+
+      const payload = {
+        sceneDescription: currentSceneDescription,
+        userText: text,
+        npcName: npcName
+      };
+
+      try {
+        const response = await fetch(`${apiUrl}/npc/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error("Błąd połączenia");
+
+        const data = await response.json();
+
+        document.getElementById(loaderId).remove();
+
+        addNpcResponse(npcName, data);
+
+      } catch (error) {
+        document.getElementById(loaderId).remove();
+        addMessageToChat('system', 'System', 'Błąd: ' + error.message);
+      }
+    }
+
+    function addMessageToChat(type, sender, text) {
+      const container = document.getElementById('chat-history');
+
+      if (container.querySelector('.placeholder-text')) {
+        container.innerHTML = '';
+      }
+
+      const div = document.createElement('div');
+      div.className = `msg ${type}`;
+
+      if (type === 'system') {
+        div.style.alignSelf = 'center';
+        div.style.backgroundColor = '#ef5350';
+        div.style.color = 'white';
+      }
+
+      div.innerHTML = `
+                <div class="msg-name">${sender}</div>
+                <div>${text}</div>
+            `;
+
+      container.appendChild(div);
+      scrollToBottom();
+    }
+
+    function addNpcResponse(name, data) {
+      const container = document.getElementById('chat-history');
+      const div = document.createElement('div');
+      div.className = `msg npc`;
+
+      let html = `<div class="msg-name">${name}</div>`;
+      html += `<div>${data.speech}</div>`;
+
+      if (data.action) {
+        html += `<div class="npc-action">* ${data.action} *</div>`;
+      }
+
+      div.innerHTML = html;
+      container.appendChild(div);
+      scrollToBottom();
+    }
+
+    function addLoaderToChat(text) {
+      const container = document.getElementById('chat-history');
+      if (container.querySelector('.placeholder-text')) container.innerHTML = '';
+
+      const id = 'loader-' + Date.now();
+      const div = document.createElement('div');
+      div.id = id;
+      div.className = 'loader';
+      div.style.alignSelf = 'center';
+      div.innerText = text;
+
+      container.appendChild(div);
+      scrollToBottom();
+      return id;
+    }
+
+    function scrollToBottom() {
+      const container = document.getElementById('chat-history');
+      container.scrollTop = container.scrollHeight;
+    }
+
+  </script>
+</body>
+
+</html>
