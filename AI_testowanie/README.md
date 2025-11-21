@@ -1,6 +1,6 @@
 # 🧠 Gra Detektywistyczna — API z LLM NPC
-
-## ⚙️ 1. Wymagania i konfiguracja Ollama
+---
+## ⚙️ Wymagania i konfiguracja Ollama
 
 Projekt wymaga zainstalowanego Ollama oraz modelu **gpt-oss:20b**.
 
@@ -18,8 +18,7 @@ Definicja modelu znajduje się w pliku **`Modelfile`** w katalogu głównym proj
 ```bash
 ollama create game-npc-model -f Modelfile
 ```
-
-### 🔹 Uruchomienie serwera Ollama:
+<!-- ### 🔹 Uruchomienie serwera Ollama:
 Przed uruchomieniem aplikacji FastAPI, należy oddzielnie uruchomić serwer Ollama:
 ```bash
 ollama serve
@@ -31,28 +30,36 @@ Upewnij się, że serwer Ollama działa poprawnie:
 ```bash
 ollama list
 ```
-Powinieneś zobaczyć na liście model `game-npc-model:latest`.
+Powinieneś zobaczyć na liście model `game-npc-model:latest`. -->
 
 ---
+## 🛻 Uruchomienie aplikacji
 
-## 🚀 Instalacja i Uruchomienie
-
-### 1️⃣ Zainstaluj zależności:
+### 1️⃣ Zainstaluj zależności Python:
 ```bash
 pip install -r requirements.txt
-```
+```  
 
-### 2️⃣ Uruchom serwer FastAPI:
-Użyj przygotowanego skryptu:
+### 2️⃣ Uruchom aplikację:
+
+W katalogu głównym uruchom główny skrypt:
 ```bash
 python runApp.py
-```
+```  
 
-Serwer uruchomi się pod adresem:  
-👉 `http://127.0.0.1:8000`
+### 3️⃣ Wybierz tryb pracy:
 
-Interaktywna dokumentacja API (Swagger UI):  
-🌐 `http://127.0.0.1:8000/docs`
+Po uruchomieniu skryptu zobaczysz w konsoli menu wyboru trybu:
+
+*   **1) Test Mode (Dla Testowania):**
+     *  Nie otwiera przeglądarki automatycznie
+        
+*   **2) Production Mode (Zalecany do gry):**
+    
+    *  Automatycznie otwiera przeglądarkę
+        
+    
+        
 
 ---
 

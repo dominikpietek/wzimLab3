@@ -11,16 +11,12 @@ HTML_FILE = os.path.join(UI_DIR, "index.html")
 
 
 def main():
-    if not os.path.exists(UI_DIR):
-        os.makedirs(UI_DIR)
-        print(f"Utworzono folder: {UI_DIR}")
 
-    # Pytanie o tryb
     mode_input = ""
     while mode_input.lower() not in ["1", "2"]:
         print("Wybierz tryb uruchomienia:")
         print("  1) Test Mode (z interfejsem webowym UI)")
-        print("  2) Dev Mode (tylko serwer API)")
+        print("  2) Production Mode (tylko serwer API)")
         mode_input = input("Wpisz 1 lub 2: ")
 
     is_test_mode = mode_input == "1"
@@ -40,7 +36,7 @@ def main():
         processes.append(ollama_process)
 
         print("🚀 Startuję serwer FastAPI...")
-        # W trybie DEV używamy "dev", żeby fastAPI nadzorował zmiany kodu
+
         fastapi_cmd = [sys.executable, "-m", "fastapi", "dev", "app/main.py"]
         fastapi_process = subprocess.Popen(
             fastapi_cmd,
@@ -60,7 +56,7 @@ def main():
                 print(
                     f"⚠️ Nie ma pliku: {HTML_FILE}. Upewnij się, że 'index.html' jest w folderze UI_DEV.")
 
-        mode_name = "TEST" if is_test_mode else "DEV"
+        mode_name = "TEST" if is_test_mode else "PRODUCTION"
         print(
             f"\n✅ Uruchomiono w trybie {mode_name}. Naciśnij Ctrl+C, żeby zatrzymać.\n")
 
