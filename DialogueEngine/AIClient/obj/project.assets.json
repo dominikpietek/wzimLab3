@@ -18,6 +18,9 @@
       "DTOModel/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.4"
+        },
         "compile": {
           "bin/placeholder/DTOModel.dll": {}
         },
@@ -71,23 +74,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\domin\\.nuget\\packages\\": {},
+    "C:\\Users\\Piatk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\wzimLab3\\DialogueEngine\\AIClient\\AIClient.csproj",
+      "projectUniqueName": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\AIClient\\AIClient.csproj",
       "projectName": "AIClient",
-      "projectPath": "C:\\Projects\\wzimLab3\\DialogueEngine\\AIClient\\AIClient.csproj",
-      "packagesPath": "C:\\Users\\domin\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\wzimLab3\\DialogueEngine\\AIClient\\obj\\",
+      "projectPath": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\AIClient\\AIClient.csproj",
+      "packagesPath": "C:\\Users\\Piatk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\AIClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\domin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Piatk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -96,15 +99,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\DTOModel.csproj": {
-              "projectPath": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\DTOModel.csproj"
+            "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\DTOModel\\DTOModel.csproj": {
+              "projectPath": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\DTOModel\\DTOModel.csproj"
             }
           }
         }
@@ -119,7 +121,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -146,7 +148,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

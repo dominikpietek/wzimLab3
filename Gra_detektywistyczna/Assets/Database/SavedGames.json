@@ -1,7 +1,25 @@
 {
   "GamesToContinue": [
-    { "Title": "SaveOne" },
-    { "Title": "SaveTwo" },
-    { "Title": "SaveThree" }
+    {
+      "Title": "Gra 1",
+      "CurrentSceneNumber": 2,
+      "MaxSceneNumber": 5,
+      "GameHistory": "",
+      "LastSaveDate": "2025-11-24T14:30:00Z"  
+    },
+    {
+      "Title": "Gra 2",
+      "CurrentSceneNumber": 4,
+      "MaxSceneNumber": 5,
+      "GameHistory": "",
+      "LastSaveDate": "2025-11-24T16:45:00Z"
+    },
+	{
+      "Title": "Gra 3",
+      "CurrentSceneNumber": 1,
+      "MaxSceneNumber": 5,
+      "GameHistory": "",
+      "LastSaveDate": "2025-11-24T12:15:00Z"
+    }
   ]
 }

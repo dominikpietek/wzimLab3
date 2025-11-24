@@ -8,8 +8,11 @@
 <Target Name="CopyToUnity" AfterTargets="Build">
   <Message Importance="high" Text="Kopiowanie DTOModel.dll do Unity" />
   <MakeDir Directories="$(UnityPluginsDir)" />
-  <Copy SourceFiles="$(TargetDir)$(TargetName).dll"
-        DestinationFolder="$(UnityPluginsDir)" />
+  <Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(UnityPluginsDir)" />
 </Target>
+
+<ItemGroup>
+  <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+</ItemGroup>
 
 </Project>

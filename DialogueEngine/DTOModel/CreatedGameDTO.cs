@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace DTOModel
 {
@@ -6,5 +7,10 @@ namespace DTOModel
     public class CreatedGameDTO
     {
         public string Title;
+        public int CurrentSceneNumber;
+        public int MaxSceneNumber;
+        public string GameHistory;
+        public string LastSaveDate;
+
     }
 }

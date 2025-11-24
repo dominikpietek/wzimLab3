@@ -37,6 +37,9 @@
         }
       },
       "DTOModel/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.4"
+        },
         "runtime": {
           "DTOModel.dll": {
             "assemblyVersion": "1.0.0.0",

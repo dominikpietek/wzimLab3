@@ -1,42 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Projects\\wzimLab3\\DialogueEngine\\",
+  "WorkspaceRootPath": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E0CCF31-6162-4241-94F1-511088747164}|DialogueEngine\\DialogueEngine.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dialogueengine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E0CCF31-6162-4241-94F1-511088747164}|DialogueEngine\\DialogueEngine.csproj|solutionrelative:dialogueengine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dtomodel\\settingsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|solutionrelative:dtomodel\\settingsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3E0CCF31-6162-4241-94F1-511088747164}|DialogueEngine\\DialogueEngine.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dialogueengine\\dialogueengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3E0CCF31-6162-4241-94F1-511088747164}|DialogueEngine\\DialogueEngine.csproj|c:\\users\\piatk\\wzimlab3\\dialogueengine\\dialogueengine\\dialogueengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E0CCF31-6162-4241-94F1-511088747164}|DialogueEngine\\DialogueEngine.csproj|solutionrelative:dialogueengine\\dialogueengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dtomodel\\scenedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|solutionrelative:dtomodel\\scenedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dtomodel\\npcresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|solutionrelative:dtomodel\\npcresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43F80114-E67D-4135-AB41-91EAE150A5E5}|AIClient\\AIClient.csproj|c:\\projects\\wzimlab3\\dialogueengine\\aiclient\\aicommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43F80114-E67D-4135-AB41-91EAE150A5E5}|AIClient\\AIClient.csproj|solutionrelative:aiclient\\aicommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dtomodel\\gamestocontinuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|solutionrelative:dtomodel\\gamestocontinuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dtomodel\\createdgamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|c:\\users\\piatk\\wzimlab3\\dialogueengine\\dtomodel\\createdgamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|solutionrelative:dtomodel\\createdgamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|c:\\projects\\wzimlab3\\dialogueengine\\dtomodel\\methoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FFCA2C1-0FA2-44B5-A273-FD581EE0996D}|DTOModel\\DTOModel.csproj|solutionrelative:dtomodel\\methoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,128 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SceneDTO.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\SceneDTO.cs",
-              "RelativeDocumentMoniker": "DTOModel\\SceneDTO.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\SceneDTO.cs",
-              "RelativeToolTip": "DTOModel\\SceneDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T18:14:50.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NPCResponseDTO.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\NPCResponseDTO.cs",
-              "RelativeDocumentMoniker": "DTOModel\\NPCResponseDTO.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\NPCResponseDTO.cs",
-              "RelativeToolTip": "DTOModel\\NPCResponseDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T18:07:19.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AICommunication.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\AIClient\\AICommunication.cs",
-              "RelativeDocumentMoniker": "AIClient\\AICommunication.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\AIClient\\AICommunication.cs",
-              "RelativeToolTip": "AIClient\\AICommunication.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAIAwwC4AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T17:58:20.589Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SettingsDTO.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\SettingsDTO.cs",
-              "RelativeDocumentMoniker": "DTOModel\\SettingsDTO.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\SettingsDTO.cs",
-              "RelativeToolTip": "DTOModel\\SettingsDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T13:15:55.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GamesToContinueDTO.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\GamesToContinueDTO.cs",
-              "RelativeDocumentMoniker": "DTOModel\\GamesToContinueDTO.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\GamesToContinueDTO.cs",
-              "RelativeToolTip": "DTOModel\\GamesToContinueDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T23:55:45.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DialogueEngine.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DialogueEngine\\DialogueEngine.cs",
-              "RelativeDocumentMoniker": "DialogueEngine\\DialogueEngine.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DialogueEngine\\DialogueEngine.cs",
-              "RelativeToolTip": "DialogueEngine\\DialogueEngine.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwC4AAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T23:00:01.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MethodDTO.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\MethodDTO.cs",
-              "RelativeDocumentMoniker": "DTOModel\\MethodDTO.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\MethodDTO.cs",
-              "RelativeToolTip": "DTOModel\\MethodDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T22:55:02.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "CreatedGameDTO.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\CreatedGameDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\DTOModel\\CreatedGameDTO.cs",
               "RelativeDocumentMoniker": "DTOModel\\CreatedGameDTO.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DTOModel\\CreatedGameDTO.cs",
+              "ToolTip": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\DTOModel\\CreatedGameDTO.cs",
               "RelativeToolTip": "DTOModel\\CreatedGameDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T22:32:07.22Z"
+              "WhenOpened": "2025-11-24T22:16:52.446Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Projects\\wzimLab3\\DialogueEngine\\DialogueEngine\\Program.cs",
-              "RelativeDocumentMoniker": "DialogueEngine\\Program.cs",
-              "ToolTip": "C:\\Projects\\wzimLab3\\DialogueEngine\\DialogueEngine\\Program.cs",
-              "RelativeToolTip": "DialogueEngine\\Program.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAIwGUAAAAAAAAAAAAAAA==",
+              "Title": "DialogueEngine.cs",
+              "DocumentMoniker": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\DialogueEngine\\DialogueEngine.cs",
+              "RelativeDocumentMoniker": "DialogueEngine\\DialogueEngine.cs",
+              "ToolTip": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\DialogueEngine\\DialogueEngine.cs",
+              "RelativeToolTip": "DialogueEngine\\DialogueEngine.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T22:15:40.508Z",
+              "WhenOpened": "2025-11-11T23:00:01.699Z",
               "EditorCaption": ""
             }
           ]

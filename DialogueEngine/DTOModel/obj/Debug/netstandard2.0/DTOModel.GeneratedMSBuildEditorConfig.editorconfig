@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = DTOModel
-build_property.ProjectDir = C:\Projects\wzimLab3\DialogueEngine\DTOModel\
+build_property.ProjectDir = C:\Users\Piatk\wzimLab3\DialogueEngine\DTOModel\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

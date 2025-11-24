@@ -3,6 +3,8 @@ using DTOModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +17,20 @@ namespace DialogueEngine
         private readonly AICommunication _aICommunication = new AICommunication();
 
         public string GetGamesToContinue(string[] parameters)
-        {
+        {  
             string games = File.ReadAllText(_databasePath + "/SavedGames.json");
+
+            if (games == null || games == "")
+                return JsonConvert.SerializeObject(new GamesToContinueDTO());
 
             GamesToContinueDTO gameDTOs = JsonConvert.DeserializeObject<GamesToContinueDTO>(games);
 
-            return JsonConvert.SerializeObject(gameDTOs);
+            var settings = new JsonSerializerSettings
+            {
+                DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                DateTimeZoneHandling = DateTimeZoneHandling.Utc
+            };
+            return JsonConvert.SerializeObject(gameDTOs, settings);
         }
 
         public string GetSettings(string[] parameters)

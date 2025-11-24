@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nTYvPmzY2hw=",
+  "dgSpecHash": "76c7gN+JoXs=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\wzimLab3\\DialogueEngine\\DialogueEngine\\DialogueEngine.csproj",
+  "projectFilePath": "C:\\Users\\Piatk\\wzimLab3\\DialogueEngine\\DialogueEngine\\DialogueEngine.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\domin\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+    "C:\\Users\\Piatk\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
   ],
   "logs": []
 }
