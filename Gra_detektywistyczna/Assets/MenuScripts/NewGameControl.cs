@@ -21,6 +21,15 @@ namespace Assets.MenuScripts
             };
             string response = await DialogueEngineManager.Instance.AskNPCAsync(npcResponseDTO);
             Debug.Log(response);
+
+
+        }
+
+        public AudioClip sound;
+
+        void Start()
+        {
+            AudioManager.Instance.PlaySFX(sound);
         }
     }
 }
