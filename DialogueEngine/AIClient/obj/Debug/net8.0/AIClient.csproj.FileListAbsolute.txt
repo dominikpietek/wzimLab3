@@ -94,3 +94,19 @@ G:\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.dll
 G:\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\refint\AIClient.dll
 G:\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.pdb
 G:\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\ref\AIClient.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\bin\Debug\net8.0\AIClient.deps.json
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\bin\Debug\net8.0\AIClient.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\bin\Debug\net8.0\AIClient.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\bin\Debug\net8.0\DTOModel.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\bin\Debug\net8.0\DTOModel.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.csproj.AssemblyReference.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.AssemblyInfoInputs.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.AssemblyInfo.cs
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.csproj.CoreCompileInputs.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.sourcelink.json
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.csproj.Up2Date
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\refint\AIClient.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\AIClient.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\AIClient\obj\Debug\net8.0\ref\AIClient.dll

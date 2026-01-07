@@ -11,6 +11,8 @@ namespace DTOModel
 
         public string Description;
 
+        public string Background;
+
         public NPCDTO[] Npcs;
 
         public ItemDTO[] Items;

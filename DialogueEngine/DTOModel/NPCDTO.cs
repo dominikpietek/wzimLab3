@@ -10,5 +10,6 @@ namespace DTOModel
         public string name;
         public string role;
         public string description;
+        public string protrait;
     }
 }

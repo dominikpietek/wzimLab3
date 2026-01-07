@@ -2,27 +2,32 @@
   "scenes": [
     {
       "name": "Scena 1 - Galeria Apollo",
+      "background": "background1",
       "description": "Rozbita gablota w Galerii Apollo. Wokół stoją Joanne, Darmian, Casper i Serena. Chaos po kradzieży.",
-      "npcs": [
+      "npcs": [ 
         {
           "name": "Joanne Galtier",
           "role": "Kierowniczka Galerii Apollo",
-          "description": "Zestresowana, twierdzi że nic nie widziała i przyszła godzinę wcześniej."
+          "description": "Zestresowana, twierdzi że nic nie widziała i przyszła godzinę wcześniej.",
+          "portrait": "Joanne"
         },
         {
           "name": "Darmian Duchamp",
           "role": "Ochroniarz",
-          "description": "Był po drugiej stronie muzeum, przybiegł jak tylko usłyszał alarm."
+          "description": "Był po drugiej stronie muzeum, przybiegł jak tylko usłyszał alarm.",
+          "portrait": "Darmian"
         },
         {
           "name": "Casper",
           "role": "Pracownik galerii",
-          "description": "Cichy, blady. Na widok detektywa natychmiast opuszcza salę."
+          "description": "Cichy, blady. Na widok detektywa natychmiast opuszcza salę.",
+          "portrait": "Casper"
         },
         {
           "name": "Serena Pulin",
           "role": "Młoda detektyw",
-          "description": "Pewna siebie, energiczna, zwraca uwagę na nielogiczne elementy sprawy."
+          "description": "Pewna siebie, energiczna, zwraca uwagę na nielogiczne elementy sprawy.",
+          "portrait": "Serena"
         }
       ],
       "items": [
@@ -35,17 +40,20 @@
     },
     {
       "name": "Scena 2 - Biuro Dyrektora",
+      "background": "background2",
       "description": "Eleganckie biuro Francoisa, pachnące cygarami. Dyrektor nerwowy i defensywny.",
       "npcs": [
         {
           "name": "Francois Galtier",
           "role": "Dyrektor muzeum",
-          "description": "Zrzuca winę na pracowników. Twierdzi, że system był testowany tydzień temu."
+          "description": "Zrzuca winę na pracowników. Twierdzi, że system był testowany tydzień temu.",
+          "portrait": "Francois"
         },
         {
           "name": "Serena Pulin",
           "role": "Detektyw",
-          "description": "Sugeruje sabotaż od środka, prowokuje Francoisa do reakcji."
+          "description": "Sugeruje sabotaż od środka, prowokuje Francoisa do reakcji.",
+          "portrait": "Serena"
         }
       ],
       "items": [
@@ -58,22 +66,26 @@
     },
     {
       "name": "Scena 3 - Pokój socjalny",
+      "background": "background1",
       "description": "Zapach starej kawy, automat, stosy gazet. Mathieu i Darmian rozmawiają półszeptem.",
       "npcs": [
         {
           "name": "Mathieu",
           "role": "Dozorca",
-          "description": "Twierdzi, że widział 'dwa cienie' znające muzeum jak własną kieszeń."
+          "description": "Twierdzi, że widział 'dwa cienie' znające muzeum jak własną kieszeń.",
+          "portrait": "przesluchiwany1"
         },
         {
           "name": "Darmian Duchamp",
           "role": "Ochroniarz",
-          "description": "Broni Mathieu, reaguje nerwowo na sugestie Sereny."
+          "description": "Broni Mathieu, reaguje nerwowo na sugestie Sereny.",
+          "portrait": "Darmian"
         },
         {
           "name": "Serena Pulin",
           "role": "Detektyw",
-          "description": "Naciska, insynuuje współudział kogoś z personelu."
+          "description": "Naciska, insynuuje współudział kogoś z personelu.",
+          "portrait": "Serena"
         }
       ],
       "items": [
@@ -86,17 +98,20 @@
     },
     {
       "name": "Scena 4 - Galeria Apollo (Rekonstrukcja)",
+      "background": "background2",
       "description": "Technicy zabezpieczają miejsce zbrodni, Casper odpowiada wymijająco.",
       "npcs": [
         {
           "name": "Casper",
           "role": "Pracownik galerii",
-          "description": "Utrzymuje, że nic nie słyszał przez hałas odkurzacza."
+          "description": "Utrzymuje, że nic nie słyszał przez hałas odkurzacza.",
+          "portrait": "Casper"
         },
         {
           "name": "Serena Pulin",
           "role": "Detektyw",
-          "description": "Sceptyczna wobec wyjaśnień Caspera."
+          "description": "Sceptyczna wobec wyjaśnień Caspera.",
+          "portrait": "Serena"
         }
       ],
       "items": [
@@ -109,17 +124,20 @@
     },
     {
       "name": "Scena 5 - Dziedziniec muzeum",
+      "background": "background1",
       "description": "Tłum turystów, prasa czeka za barierkami. Laura i Guy przepychają się.",
       "npcs": [
         {
           "name": "Laura Papilon",
           "role": "Dziennikarka",
-          "description": "Twierdzi, że wiedziała o kradzieży przed alarmem."
+          "description": "Twierdzi, że wiedziała o kradzieży przed alarmem.",
+          "portrait": "Laura"
         },
         {
           "name": "Guy Plume",
           "role": "Kamerzysta",
-          "description": "Sugeruje, że kradzież była 'show'."
+          "description": "Sugeruje, że kradzież była 'show'.",
+          "portrait": "Guy"
         }
       ],
       "items": [
@@ -132,17 +150,20 @@
     },
     {
       "name": "Scena 6 - Sala wykładowa",
+      "background": "background2",
       "description": "Profesor Tarrau bada zdjęcia skradzionej biżuterii.",
       "npcs": [
         {
           "name": "Prof. Terry Tarrau",
           "role": "Ekspert historyczny",
-          "description": "Nadmiernie emocjonalny, obsesyjnie kocha artefakty."
+          "description": "Nadmiernie emocjonalny, obsesyjnie kocha artefakty.",
+          "portrait": "Guy"
         },
         {
           "name": "Serena Pulin",
           "role": "Detektyw",
-          "description": "Sugeruje, że wiedza profesora mogła pomóc złodziejom."
+          "description": "Sugeruje, że wiedza profesora mogła pomóc złodziejom.",
+          "portrait": "Serena"
         }
       ],
       "items": [
@@ -155,12 +176,14 @@
     },
     {
       "name": "Scena 7 - Pokój ochrony",
+      "background": "background1",
       "description": "Monitory wyświetlają nagrania kradzieży. Darmian tłumaczy się.",
       "npcs": [
         {
           "name": "Darmian Duchamp",
           "role": "Ochroniarz",
-          "description": "Twierdzi, że alarm wyłączono ręcznie — kody zna tylko ochrona i dyrekcja."
+          "description": "Twierdzi, że alarm wyłączono ręcznie — kody zna tylko ochrona i dyrekcja.",
+          "portrait": "Darmian"
         }
       ],
       "items": [
@@ -173,12 +196,14 @@
     },
     {
       "name": "Scena 8 - Archiwum",
+      "background": "background1",
       "description": "Stare segregatory, ciemne piwnice muzeum.",
       "npcs": [
         {
           "name": "Serena Pulin",
           "role": "Detektyw",
-          "description": "Zauważa, że testy systemów podpisał Galtier."
+          "description": "Zauważa, że testy systemów podpisał Galtier.",
+          "portrait": "Serena"
         }
       ],
       "items": [
@@ -191,12 +216,14 @@
     },
     {
       "name": "Scena 9 - Dziedziniec nocą",
+      "background": "background1",
       "description": "Mathieu pali papierosa, wygląda na skruszonego.",
       "npcs": [
         {
           "name": "Mathieu",
           "role": "Dozorca",
-          "description": "Twierdzi, że widział Serenę wychodzącą przed alarmem."
+          "description": "Twierdzi, że widział Serenę wychodzącą przed alarmem.",
+          "portrait": "Mathieu"
         }
       ],
       "items": [
@@ -209,17 +236,20 @@
     },
     {
       "name": "Scena 10 - Kawiarnia",
+      "background": "background1",
       "description": "Joanne pije wino i pali papierosa, roztrzęsiona.",
       "npcs": [
         {
           "name": "Joanne Galtier",
           "role": "Kierowniczka galerii",
-          "description": "Twierdzi, że widziała samochód Francoisa za muzeum."
+          "description": "Twierdzi, że widziała samochód Francoisa za muzeum.",
+          "portrait": "Joanne"
         },
         {
           "name": "Serena Pulin",
           "role": "Detektyw",
-          "description": "Zbyt szybko broni Joanne."
+          "description": "Zbyt szybko broni Joanne.",
+          "portrait": "Serena"
         }
       ],
       "items": [
@@ -232,17 +262,20 @@
     },
     {
       "name": "Scena 11 - Redakcja gazety",
+      "background": "background1",
       "description": "Zagracone biura, tablice ze zdjęciami z Luwru.",
       "npcs": [
         {
           "name": "Laura Papilon",
           "role": "Dziennikarka",
-          "description": "Zaprzecza udziałowi, ale ma nagrania, których nie powinna posiadać."
+          "description": "Zaprzecza udziałowi, ale ma nagrania, których nie powinna posiadać.",
+          "portrait": "Laura"
         },
         {
           "name": "Guy Plume",
           "role": "Kamerzysta",
-          "description": "Zdenerwowany, emocjonalnie zależny od Laury."
+          "description": "Zdenerwowany, emocjonalnie zależny od Laury.",
+          "portrait": "Guy"
         }
       ],
       "items": [
@@ -255,12 +288,14 @@
     },
     {
       "name": "Scena 12 - Gabinet profesora",
+      "background": "background1",
       "description": "Pełen książek i rekwizytów. Jedno pudełko z repliką zniknęło.",
       "npcs": [
         {
           "name": "Prof. Terry Tarrau",
           "role": "Ekspert",
-          "description": "Broni się emocjonalnie, fascynacja biżuterią wydaje się obsesyjna."
+          "description": "Broni się emocjonalnie, fascynacja biżuterią wydaje się obsesyjna.",
+          "portrait": "Ekspert"
         }
       ],
       "items": [

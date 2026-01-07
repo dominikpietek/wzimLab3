@@ -53,7 +53,7 @@ namespace DialogueEngine
             if (parameters.Length == 0) return string.Empty;
 
             NPCRequestDTO nPCRequestDTO = JsonConvert.DeserializeObject<NPCRequestDTO>(parameters[0]);
-
+            
             return await _aICommunication.GenerateNPCResponseAsync(nPCRequestDTO);
         }
 

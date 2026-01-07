@@ -64,3 +64,14 @@ G:\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.csproj.Cor
 G:\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.sourcelink.json
 G:\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.dll
 G:\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\bin\Debug\netstandard2.0\DTOModel.deps.json
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\bin\Debug\netstandard2.0\DTOModel.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\bin\Debug\netstandard2.0\DTOModel.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.csproj.AssemblyReference.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.AssemblyInfoInputs.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.AssemblyInfo.cs
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.csproj.CoreCompileInputs.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.sourcelink.json
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DTOModel\obj\Debug\netstandard2.0\DTOModel.pdb

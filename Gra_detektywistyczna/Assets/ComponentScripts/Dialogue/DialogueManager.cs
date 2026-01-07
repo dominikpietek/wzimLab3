@@ -5,10 +5,14 @@ using System.Collections;
 using DTOModel;
 using System.Collections.Generic;
 using TMPro;
+using System.Threading.Tasks;
+
 public
 class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
+    [Header("UI References")]
+    [SerializeField] private Image NpcImage;
 
     public string sceneContext;
     public string currentNpcName;
@@ -36,6 +40,7 @@ class DialogueManager : MonoBehaviour
         {
             if (isAwaitingUserInput)
             {
+                
                 dialoguesHistory.Add(new Dialogue("Ty", inputField.text));
                 NPCRequestDTO npcRequestDTO = new NPCRequestDTO()
                 {
@@ -58,6 +63,7 @@ class DialogueManager : MonoBehaviour
     }
     public void AskQuestion(string name)
     {
+        
         Dialogue dialogue = new Dialogue("Ty", sceneContext);
         dialogue.isPlayerPrompt = true;
         EnqueueDialogue(dialogue);
@@ -79,17 +85,34 @@ class DialogueManager : MonoBehaviour
         Dialogue dialog = dialoguesQueue.Dequeue();
         if (dialog.isPlayerPrompt)
         {
-            PromptPlayer();
+            PromptPlayerAsync();
         }
         else
         {
             DisplayDialogue(dialog);
         }
     }
-    public void PromptPlayer()
+    public async Task PromptPlayerAsync()
     {
         HideDialogueText();
         currentNpcName = dialoguesQueue.Peek().name;
+
+        //zmienianie sprite npc (nie wiem czy w dobrym miejscu najwyzej poprawie)
+        
+        string[] parameters = { MenuControl.CurrentScenarioName,MenuControl.CurrentSceneNumber.ToString()};
+        SceneScriptDTO scene = await DialogueEngineManager.Instance.GetSceneAsync(parameters);
+        foreach (NPCDTO npc in scene.Npcs)
+        {
+            if (currentNpcName == npc.name.Split(' ')[0])
+            {
+                Sprite newSprite = Resources.Load<Sprite>(currentNpcName);
+                NpcImage.sprite = newSprite;
+                if (NpcImage.color.a == 0f)
+                {
+                    NpcImage.color = Color.white;
+                }
+            }
+        }
         nameText.text = "Ty";
         EnableUserInput();
         isAwaitingUserInput = true;
@@ -97,8 +120,7 @@ class DialogueManager : MonoBehaviour
     public async void SendNpcRequest(NPCRequestDTO npcRequestDTO)
     {
         DialogueContextManager.AddPlayerDialogue("Ty", npcRequestDTO.UserText);
-        NPCResponseDTO response =
-            await DialogueEngineManager.Instance.AskNPCAsync(npcRequestDTO);
+        NPCResponseDTO response = await DialogueEngineManager.Instance.AskNPCAsync(npcRequestDTO);
         StopAllCoroutines();
         isAwaitingNPCResponse = false;
         dialoguesQueue.Peek().sentence = response.Speech;

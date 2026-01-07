@@ -130,3 +130,25 @@ G:\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\refint\DialogueEngine
 G:\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.pdb
 G:\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.genruntimeconfig.cache
 G:\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\ref\DialogueEngine.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\DialogueEngine.exe
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\DialogueEngine.deps.json
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\DialogueEngine.runtimeconfig.json
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\DialogueEngine.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\DialogueEngine.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\AIClient.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\DTOModel.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\AIClient.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\bin\Debug\net8.0\DTOModel.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.csproj.AssemblyReference.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.AssemblyInfoInputs.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.AssemblyInfo.cs
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.csproj.CoreCompileInputs.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.sourcelink.json
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\Dialogue.6F6949B3.Up2Date
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\refint\DialogueEngine.dll
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.pdb
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\DialogueEngine.genruntimeconfig.cache
+C:\Users\marec\Desktop\New folder\wzimLab3\DialogueEngine\DialogueEngine\obj\Debug\net8.0\ref\DialogueEngine.dll
