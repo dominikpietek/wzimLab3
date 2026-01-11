@@ -1,0 +1,37 @@
+# --- Pliki systemowe ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Pliki generowane przez IDE (Visual Studio / Rider / VS Code) ---
+# Te pliki powstają, gdy otwierasz kod modułu. Nie chcemy ich w repo.
+.vs/
+.idea/
+.vscode/
+*.user
+*.userprefs
+*.suo
+*.sln
+*.csproj
+*.pidb
+*.pdb
+
+# --- Pliki tymczasowe Unity (zabezpieczenie) ---
+# Nawet jeśli to tylko moduł, warto to dodać, gdybyś przypadkiem
+# otworzył ten folder jako projekt lub wrzucił tu pliki testowe.
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+MemoryCaptures/
+
+# --- Ważne dla modułów ---
+# Ignoruj pliki tymczasowe testów
+test_results.xml
+
+# --- PLIKI META (NIGDY NIE IGNORUJ) ---
+# To najważniejsza zasada. Pliki .meta muszą być w repozytorium!
+# !*.meta
