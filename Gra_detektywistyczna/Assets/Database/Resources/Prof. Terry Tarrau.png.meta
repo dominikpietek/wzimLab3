@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a7d9d189cd045d4dbfdcff3b177ee97
+guid: 0b7e17d4c300bc741bcd867887a671b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5893013269979195336
-    second: Darmian_0
+      213: 4996517425362430943
+    second: Terry Tarrau_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Darmian_0
+      name: Terry Tarrau_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 35
-        width: 217
-        height: 285
+        x: 165
+        y: 23
+        width: 521
+        height: 1003
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8381a3a47afc73ea0800000000000000
-      internalID: -5893013269979195336
+      spriteID: fdbe6cc2022375540800000000000000
+      internalID: 4996517425362430943
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Darmian_0: -5893013269979195336
+      Terry Tarrau_0: 4996517425362430943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

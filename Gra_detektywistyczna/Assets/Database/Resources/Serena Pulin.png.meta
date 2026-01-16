@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: c285db3099744fd4f82069d7a5597f92
+guid: 6148d0d92f8290547a77025ec85c65d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8968303159106691468
-    second: Casper 1_0
+      213: 1324089678864826058
+    second: Serena_0
+  - first:
+      213: 8780298926116349079
+    second: Serena_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Casper 1_0
+      name: Serena_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 14
-        width: 437
-        height: 1009
+        x: 209
+        y: 18
+        width: 335
+        height: 1038
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47e9e6bfacf2a8380800000000000000
-      internalID: -8968303159106691468
+      spriteID: acebf7f2c8c106210800000000000000
+      internalID: 1324089678864826058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serena_1
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 874
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794a8e07a53e9d970800000000000000
+      internalID: 8780298926116349079
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Casper 1_0: -8968303159106691468
+      Serena_0: 1324089678864826058
+      Serena_1: 8780298926116349079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

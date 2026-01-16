@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c285db3099744fd4f82069d7a5597f92
+guid: 179fc8aa58b459f4f95e4d1ef3320f5e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8968303159106691468
-    second: Casper 1_0
+      213: 7674397898601434565
+    second: Guy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Casper 1_0
+      name: Guy_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 14
-        width: 437
-        height: 1009
+        x: 111
+        y: 10
+        width: 510
+        height: 1047
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47e9e6bfacf2a8380800000000000000
-      internalID: -8968303159106691468
+      spriteID: 5cd84236a30f08a60800000000000000
+      internalID: 7674397898601434565
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Casper 1_0: -8968303159106691468
+      Guy_0: 7674397898601434565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5282a8115a0519a40af84a48bcf3029c
+guid: 701039fa862ab8845b4a7a3549a41b89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1325400761777795832
-    second: dedektyw_0
+      213: 5962183142322678878
+    second: "g\u0142\xF3wny bohater_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dedektyw_0
+      name: "g\u0142\xF3wny bohater_0"
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3
-        width: 256
-        height: 465
+        x: 151
+        y: 21
+        width: 370
+        height: 1034
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80dc339870b3b9de0800000000000000
-      internalID: -1325400761777795832
+      spriteID: e5c27fb9afdedb250800000000000000
+      internalID: 5962183142322678878
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dedektyw_0: -1325400761777795832
+      "g\u0142\xF3wny bohater_0": 5962183142322678878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
