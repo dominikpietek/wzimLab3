@@ -24,8 +24,8 @@ public class DialogueManager : MonoBehaviour
 
     public List<Dialogue> dialoguesHistory;
     private Queue<Dialogue> dialoguesQueue;
-    public bool isAwaitingUserInput = false;
-    public bool isAwaitingNPCResponse = false;
+    private bool isAwaitingUserInput = false;
+    private bool isAwaitingNPCResponse = false;
 
     async void Start()
     {
@@ -44,15 +44,39 @@ public class DialogueManager : MonoBehaviour
 
             SceneDTO context = new SceneDTO
             {
+
                 LocationName = GameSession.CurrentScenarioName,
                 ScenePrompt = "To jest kontynuacja śledztwa. Historia do tej pory: " + history
             };
-
             await DialogueEngineManager.Instance.GenerateNewSceneAsync(context);
+        } 
+        else
+        {
+            Clear();
+            var characters = MenuControl.CollectedCharacters;
+            var scene = MenuControl.CurrentScenarioName;
+
+            sceneContext = scene;
+            EnqueueDialogue(new Dialogue("Narrator", scene));
+
+            foreach (var character in characters)
+            {
+                EnqueueDialogue(
+                    new Dialogue(
+                        "Narrator",
+                        "Pochodzisz do " + character.Key + ", możesz zadać mu 3 pytania."
+                    )
+                );
+
+                AskQuestion(character.Key);
+                AskQuestion(character.Key);
+                AskQuestion(character.Key);
+            }
+
+            PlayDialogue();
         }
     }
 
-    
     void Awake()
     {
         Instance = this;
@@ -92,10 +116,45 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
+    public async void LoadNewScene()
+    {
+        await MenuControl.Instance.NextScene();
+        Clear();
+        var characters = MenuControl.CollectedCharacters;
+        var scene = MenuControl.CurrentScenarioName;
 
+        sceneContext = scene;
+        EnqueueDialogue(new Dialogue("Narrator", scene));
+
+        foreach (var character in characters)
+        {
+            EnqueueDialogue(
+                new Dialogue(
+                    "Narrator",
+                    "Pochodzisz do " + character.Key + ", możesz zadać mu 3 pytania."
+                )
+            );
+
+            AskQuestion(character.Key);
+            AskQuestion(character.Key);
+            AskQuestion(character.Key);
+        }
+
+        PlayDialogue();
+    }
+    public void LoadNpcTexture(string npcName)
+    {
+        var formattedName = npcName.Split(' ')[0];
+        {
+            NpcImage.sprite = Resources.Load<Sprite>(formattedName);
+            if (NpcImage.color.a == 0f)
+            {
+                NpcImage.color = Color.white;
+            }
+        }
+    }
     public void AskQuestion(string name)
     {
-        
         Dialogue dialogue = new Dialogue("Ty", sceneContext);
         dialogue.isPlayerPrompt = true;
         EnqueueDialogue(dialogue);
@@ -119,14 +178,14 @@ public class DialogueManager : MonoBehaviour
         Dialogue dialog = dialoguesQueue.Dequeue();
         if (dialog.isPlayerPrompt)
         {
-            PromptPlayerAsync();
+            PromptPlayer();
         }
         else
         {
             DisplayDialogue(dialog);
         }
     }
-    public async Task PromptPlayerAsync()
+    public void PromptPlayer()
     {
         HideDialogueText();
 
@@ -137,23 +196,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         currentNpcName = dialoguesQueue.Peek().name;
-
-        //zmienianie sprite npc (nie wiem czy w dobrym miejscu najwyzej poprawie)
-        
-        string[] parameters = { MenuControl.CurrentScenarioName,MenuControl.CurrentSceneNumber.ToString()};
-        SceneScriptDTO scene = await DialogueEngineManager.Instance.GetSceneAsync(parameters);
-        foreach (NPCDTO npc in scene.Npcs)
-        {
-            if (currentNpcName == npc.name.Split(' ')[0])
-            {
-                Sprite newSprite = Resources.Load<Sprite>(currentNpcName);
-                NpcImage.sprite = newSprite;
-                if (NpcImage.color.a == 0f)
-                {
-                    NpcImage.color = Color.white;
-                }
-            }
-        }
+        if (currentNpcName != "Narrator") LoadNpcTexture(currentNpcName);
         nameText.text = "Ty";
         EnableUserInput();
         isAwaitingUserInput = true;
@@ -209,19 +252,20 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
         dialoguesQueue.Peek().sentence = response.Speech;
         dialoguesQueue.Peek().name = currentNpcName;
 
         DialogueContextManager.AddNPCDialogue(currentNpcName, response.Speech);
 
         PlayDialogue();
+        isAwaitingNPCResponse = false;
     }
 
     public void DisplayDialogue(Dialogue dialogue)
     {
         dialoguesHistory.Add(dialogue);
         currentNpcName = dialogue.name;
+        if (currentNpcName != "Narrator") LoadNpcTexture(currentNpcName);
         dialogueText.text = dialogue.sentence;
         nameText.text = dialogue.name;
         StartCoroutine(TypeSentence(dialogue.sentence));
@@ -310,5 +354,14 @@ public class DialogueManager : MonoBehaviour
         inputField.gameObject.SetActive(false);
         inputField.interactable = false;
         inputField.DeactivateInputField();
+    }
+    public void Clear()
+    {
+        dialoguesHistory.Clear();
+        dialoguesQueue.Clear();
+        HideDialogue();
+        DisableUserInput();
+        currentNpcName = string.Empty;
+        NpcImage.sprite = null;
     }
 }

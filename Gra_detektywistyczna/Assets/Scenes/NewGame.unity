@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad59e13da2ac17e43b1fc9afb6069278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.MenuScripts.NewGameControl
+  dialogueHistoryPanel: {fileID: 0}
   sound: {fileID: 8300000, guid: f4ae5996a1dd69747b41fd22fa9d0f06, type: 3}
 --- !u!1 &380665208
 GameObject:
@@ -539,9 +540,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 544993791}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: NextScene
+      - m_Target: {fileID: 1784639044}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: LoadNewScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1692,7 +1693,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1784639043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb62876917300e14ca453acca0f4af8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3049883f0221e9941ae95e61b3805547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   NpcImage: {fileID: 2069392442}
@@ -1704,8 +1705,6 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1533930109}
   inputField: {fileID: 1513910185}
   dialoguesHistory: []
-  isAwaitingUserInput: 0
-  isAwaitingNPCResponse: 0
 --- !u!4 &1784639045
 Transform:
   m_ObjectHideFlags: 0
@@ -2212,7 +2211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1325400761777795832, guid: 5282a8115a0519a40af84a48bcf3029c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
+
 public class MenuControl : MonoBehaviour
 {
     public static Dictionary<string, string> CollectedCharacters = new Dictionary<string, string>();
@@ -21,6 +22,8 @@ public class MenuControl : MonoBehaviour
     private async void Awake()
     {
         await DialogueEngineManager.InitializeManagerAsync(gameObject);
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private async void OnApplicationQuit()
@@ -55,8 +58,7 @@ public class MenuControl : MonoBehaviour
 
     if (scene != null)
     {
-        MenuControl.CollectedCharacters.Clear();
-        
+        MenuControl.CollectedCharacters.Clear();   
         foreach (var character in scene.Npcs)
         {
             if (!MenuControl.CollectedCharacters.ContainsKey(character.name))
@@ -64,7 +66,7 @@ public class MenuControl : MonoBehaviour
                 MenuControl.CollectedCharacters.Add(character.name, character.protrait);
             }
         }
-        
+
         SceneManager.LoadScene("NewGame");
     }
     else
@@ -98,7 +100,7 @@ private string GetRandomScenarioFromFolder()
     return files[random.Next(0, files.Count)];
 }
 
-    public async void NextScene()
+    public async Task NextScene()
     {
         string[] parameters = { CurrentScenarioName, (++CurrentSceneNumber).ToString() };
         SceneScriptDTO scene = await DialogueEngineManager.Instance.GetSceneAsync(parameters);
