@@ -71,7 +71,7 @@ def chatWithNpc(data: NPCChatRequest):
     2. NIGDY nie tłumacz się ze swojej roli (nie pisz zdań typu "To jest zgodne z moją rolą" ani "Jako AI"). Po prostu graj.
     3. Korzystaj z sekcji "OTOCZENIE". Jeśli Detektyw pyta "kto tu jest?", musisz wymienić osoby z listy powyżej.
     4. Jeśli gracz pyta o przedmiot, użyj "Wskazówki" (Hints) z opisu, aby subtelnie naprowadzić Detektywa.
-    5. Mów krótko, naturalnie i tylko po polsku bez innych języków.
+    5. Mów krótko, naturalnie i tylko po polsku bez innych jenzykow.
     6. Zwracaj WYŁĄCZNIE czysty JSON (klucz "speech").
     """
 
