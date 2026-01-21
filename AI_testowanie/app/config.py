@@ -14,7 +14,7 @@ class Settings:
         self.PARENT_DIR = Path(__file__).resolve().parent
 
         self.MODEL_PATH = self.BASE_DIR / "models" / \
-            "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf"
+            "gpt-oss-20b-Q4_K_M.gguf"
 
         # self.MODEL_PATH = self.BASE_DIR / "models" / "qwen2.5-3b-instruct-q4_k_m.gguf"
         self.N_CTX = 4096
