@@ -9,6 +9,11 @@ from app.services.aiService import generateStream, generateStructuredOutput
 
 
 npcRouter = APIRouter(prefix="/npc")
+eventContext = """
+W tym miejscu doszło do morderstwa. Znaleziono ciało. Wszyscy są zszokowani lub zdenerwowani obecnością policji.
+System: [Przypomnienie: Reaguj emocjonalnie na morderstwo. Jeśli jesteś winny - kłam!]
+System: [Prypomnienie: (Żadnych opisów myśli, żadnych opisów czynności, żadnego trzeciego osoba)(BARDZO WAŻNE)].
+"""
 
 
 @npcRouter.post("/chat", response_model=NPCChatResponse)
@@ -31,7 +36,7 @@ def chatWithNpc(data: NPCChatRequest):
             currentNpcDesc = f"Rola: {npc.role}. Opis: {npc.description}"
             foundNpc = True
         else:
-            otherPeopleList += f"- {npc.name} ({npc.role})\n"
+            otherPeopleList += f"Imie: {npc.name}. Rola: {npc.role}. Opis: {npc.description}\n"
 
     if not foundNpc:
         print(f"[WARNING] NPC '{data.npcName}' nie znaleziono w scenie!")
@@ -48,32 +53,44 @@ def chatWithNpc(data: NPCChatRequest):
         itemsList = "Brak przedmiotów."
 
     systemPrompt = f"""
-   Jesteś postacią w grze detektywistycznej.
-    Twoje imię: {data.npcName}
-    Twoje dane: {currentNpcDesc}
+        # ROLA I TOŻSAMOŚĆ
+        Nazywasz się {data.npcName}.
+        Twoja historia: {currentNpcDesc}
 
-    KIM JEST TWÓJ ROZMÓWCA:
-    Rozmawiasz z Detektywem, który prowadzi śledztwo w sprawie zbrodni.
-    Traktuj go odpowiednio do swojej roli (np. jeśli jesteś podejrzany - bądź ostrożny, jeśli świadek - pomocny).
+        # WIEDZA (TWOJE WSPOMNIENIA)
+        Co się stało: {eventContext}
+        Lokalizacja: {gameState.currentSceneDescription}
+        Twoja opinia: Znasz ofiarę. Wiesz, że nie żyje. Masz własne zdanie na ten temat.
 
-    Lokalizacja: {gameState.currentSceneDescription}
+        # ZASADY DYNAMIKI DIALOGU (BARDZO WAŻNE - ŻEBYŚ NIE BYŁ ROBOTEM)
+        1. **ODPOWIADAJ NA KONKRETNE PYTANIE:**
+        - Jeśli Detektyw pyta "Co się stało?" -> Opowiedz ogólnie o morderstwie.
+        - Jeśli Detektyw pyta "Co z nim?" / "Jak zginął?" -> Podaj szczegóły (np. "Spłonął", "Dostał nożem" - zależnie od tego co wiesz/wymyślisz).
+        - **NIE POWTARZAJ TEGO SAMEGO:** Nie mów ciągle tej samej regułki. Jeśli już powiedziałeś, że Stefan nie żyje, a gracz pyta dalej, dodaj nowe szczegóły.
 
-    Kto jest obok:
-    {otherPeopleList}
+        2. **STYL MOWY:**
+        - Mów własnymi słowami! Nie recytuj encyklopedii.
+        - Używaj krótkich zdań, pauz, pytań retorycznych.
 
-    Widoczne przedmioty (i twoje myśli o nich):
-    {itemsList}
+        # TWOJA STRATEGIA (WINNY / NIEWINNY)
+        - **Jeśli jesteś NIEWINNY:** Jesteś pomocny i przerażony. Chcesz gadać, spekulować, plotkować.
+        - **Jeśli jesteś MORDERCĄ:** Udajesz pomocnego, ale Twoje odpowiedzi są wymijające. Możesz oskarżać innych.
 
-    Historia rozmowy:
-    {transcript}
-   ZASADY (BARDZO WAŻNE):
-    1. Jesteś żywym człowiekiem w tej sytuacji, a nie bazą danych. Możesz improwizować drobne szczegóły (np. nastrój, odczucia), aby budować klimat, o ile nie przeczy to faktom.
-    2. NIGDY nie tłumacz się ze swojej roli (nie pisz zdań typu "To jest zgodne z moją rolą" ani "Jako AI"). Po prostu graj.
-    3. Korzystaj z sekcji "OTOCZENIE". Jeśli Detektyw pyta "kto tu jest?", musisz wymienić osoby z listy powyżej.
-    4. Jeśli gracz pyta o przedmiot, użyj "Wskazówki" (Hints) z opisu, aby subtelnie naprowadzić Detektywa.
-    5. Mów krótko, naturalnie i tylko po polsku bez innych języków.
-    6. Zwracaj WYŁĄCZNIE czysty JSON (klucz "speech").
-    """
+        # INSTRUKCJA FORMATU (TYLKO MOWA)
+        Jesteś generatorem dialogu.
+        1. **Zero narracji:** Żadnych "powiedziałam", żadnych opisów czynności.
+        2. **Czysty tekst:** Tylko to, co postać mówi na głos.
+        3. **Płeć:** Pilnuj końcówek ({data.npcName}).
+
+        # INTERAKCJA
+        Rozmówca: Detektyw.
+        Inni ludzie: {otherPeopleList if otherPeopleList else "Brak"}
+
+        # OUTPUT (JSON)
+        {{
+        "speech": "Tutaj wpisz Twoją unikalną odpowiedź na ostatnie pytanie Detektywa."
+        }}
+        """
 
     userPrompt = f"Gracz pyta: \"{data.userText}\". Odpowiedz jako {data.npcName}."
 
@@ -108,10 +125,10 @@ def chatWithNpcStream(data: NPCChatRequest):
 
     for npc in gameState.currentNpcs:
         if npc.name == data.npcName:
-            currentNpcDesc = f"Rola: {npc.role}. Opis: {npc.description}"
+            currentNpcDesc = f"Rola: {npc.role}. Opis: {npc.description}\n"
             foundNpc = True
         else:
-            otherPeopleList += f"- {npc.name} ({npc.role})\n"
+            otherPeopleList += f"Imie: {npc.name}. Rola: {npc.role}. Opis: {npc.description}\n"
 
     if not foundNpc:
         currentNpcDesc = "Rola: Nieznana. Opis: Brak danych."
@@ -121,38 +138,50 @@ def chatWithNpcStream(data: NPCChatRequest):
 
     itemsList = ""
     for item in gameState.currentItems:
-        itemsList += f"- {item.name}: {item.description} (Wiedza/Wskazówka: {item.hints})\n"
+        itemsList += f"{item.name}: {item.description} (Wiedza/Wskazówka: {item.hints})\n"
 
     if not itemsList:
         itemsList = "Brak przedmiotów."
 
     systemPrompt = f"""
-    Jesteś postacią w grze detektywistycznej.
-    Twoje imię: {data.npcName}
-    Twoje dane: {currentNpcDesc}
+        # ROLA I TOŻSAMOŚĆ
+        Nazywasz się {data.npcName}.
+        Twoja historia: {currentNpcDesc}
 
-    KIM JEST TWÓJ ROZMÓWCA:
-    Rozmawiasz z Detektywem, który prowadzi śledztwo w sprawie zbrodni.
-    Traktuj go odpowiednio do swojej roli (np. jeśli jesteś podejrzany - bądź ostrożny, jeśli świadek - pomocny).
+        # WIEDZA (TWOJE WSPOMNIENIA)
+        Co się stało: {eventContext}
+        Lokalizacja: {gameState.currentSceneDescription}
+        Twoja opinia: Znasz ofiarę. Wiesz, że nie żyje. Masz własne zdanie na ten temat.
 
-    Lokalizacja: {gameState.currentSceneDescription}
+        # ZASADY DYNAMIKI DIALOGU (BARDZO WAŻNE - ŻEBYŚ NIE BYŁ ROBOTEM)
+        1. **ODPOWIADAJ NA KONKRETNE PYTANIE:**
+        - Jeśli Detektyw pyta "Co się stało?" -> Opowiedz ogólnie o morderstwie.
+        - Jeśli Detektyw pyta "Co z nim?" / "Jak zginął?" -> Podaj szczegóły (np. "Spłonął", "Dostał nożem" - zależnie od tego co wiesz/wymyślisz).
+        - **NIE POWTARZAJ TEGO SAMEGO:** Nie mów ciągle tej samej regułki. Jeśli już powiedziałeś, że Stefan nie żyje, a gracz pyta dalej, dodaj nowe szczegóły.
 
-    Kto jest obok:
-    {otherPeopleList}
+        2. **STYL MOWY:**
+        - Mów własnymi słowami! Nie recytuj encyklopedii.
+        - Używaj krótkich zdań, pauz, pytań retorycznych.
 
-    Widoczne przedmioty (i twoje myśli o nich):
-    {itemsList}
+        # TWOJA STRATEGIA (WINNY / NIEWINNY)
+        - **Jeśli jesteś NIEWINNY:** Jesteś pomocny i przerażony. Chcesz gadać, spekulować, plotkować.
+        - **Jeśli jesteś MORDERCĄ:** Udajesz pomocnego, ale Twoje odpowiedzi są wymijające. Możesz oskarżać innych.
 
-    Historia rozmowy:
-    {transcript}
+        # INSTRUKCJA FORMATU (TYLKO MOWA)
+        Jesteś generatorem dialogu.
+        1. **Zero narracji:** Żadnych "powiedziałam", żadnych opisów czynności.
+        2. **Czysty tekst:** Tylko to, co postać mówi na głos.
+        3. **Płeć:** Pilnuj końcówek ({data.npcName}).
 
-    ZASADY (BARDZO WAŻNE):
-    1. Jesteś żywym człowiekiem, improwizuj.
-    2. NIGDY nie pisz, że jesteś AI.
-    3. Mów krótko, naturalnie i tylko po polsku.
-    4. WAŻNE: NIE UŻYWAJ FORMATU JSON. Odpowiadaj zwykłym tekstem, tak jakbyś mówił.
-    """
+        # INTERAKCJA
+        Rozmówca: Detektyw.
+        Inni ludzie: {otherPeopleList if otherPeopleList else "Brak"}
 
+        # OUTPUT (JSON)
+        {{
+        "speech": "Tutaj wpisz Twoją unikalną odpowiedź na ostatnie pytanie Detektywa."
+        }}
+        """
     userPrompt = f"Gracz pyta: \"{data.userText}\". Odpowiedz jako {data.npcName}."
 
     def response_generator():

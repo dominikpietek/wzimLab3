@@ -101,7 +101,7 @@ def generateStructuredOutput(
         output = llm.create_chat_completion(
             messages=messages,
             response_format={"type": "json_object"},
-            temperature=0.4,
+            temperature=0.5,
             max_tokens=512
         )
 
@@ -139,7 +139,7 @@ def generateStream(systemPrompt: str, userPrompt: str) -> Iterator[str]:
 
     stream = llm.create_chat_completion(
         messages=messages,
-        temperature=0.6,  
+        temperature=0.5,
         max_tokens=512,
         stream=True      
     )
