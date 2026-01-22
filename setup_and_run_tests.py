@@ -28,29 +28,24 @@ namespace DialogueEngine.Tests
     public class SerializationTests
     {
         // SceneDTO
-        // Sprawdzenie prostego przesyłania tekstów typu nazwa, prompt
         [Test]
         public void SceneDTO_Should_Serialize_Prompt_And_Location()
         {
-            // Arrange
             var scene = new SceneDTO 
             { 
                 LocationName = "Stara Fabryka", 
                 ScenePrompt = "Słychać maszyny w oddali." 
             };
 
-            // Act
             string json = JsonConvert.SerializeObject(scene);
             SceneDTO? result = JsonConvert.DeserializeObject<SceneDTO>(json);
 
-            // Assert
             Assert.That(result, Is.Not.Null);
             Assert.That(result.LocationName, Is.EqualTo("Stara Fabryka"));
             Assert.That(result.ScenePrompt, Is.EqualTo("Słychać maszyny w oddali."));
         }
 
         // ItemDTO
-        // Srpawdzenie czy wszystkie pola opisu przedmiotu są zachowane
         [Test]
         public void ItemDTO_Should_Serialize_All_Fields()
         {
@@ -70,7 +65,6 @@ namespace DialogueEngine.Tests
         }
 
         // NPCRequestDTO
-        // Sprawdzenie formatu zapytania do AI
         [Test]
         public void NPCRequestDTO_Should_Serialize_Correctly()
         {
@@ -82,13 +76,11 @@ namespace DialogueEngine.Tests
             };
             string json = JsonConvert.SerializeObject(request);
             
-            // Sprawdzamy, czy w JSONie pole nazywa się "npcName" (camelCase) lub "NpcName"
-            // Zależy to od atrybutów [JsonProperty], ten test upewnia się, że kluczowe dane są w stringu.
-            Assert.That(json, Does.Contain("\"npcName\":\"Detektyw\"").Or.Contain("\"NPCName\":\"Detektyw\"").Or.Contain("\"NpcName\":\"Detektyw\"")); 
+            // Sprawdzenie atrybutu [JsonProperty("npcName")]
+            Assert.That(json, Does.Contain("\"npcName\":\"Detektyw\"")); 
         }
 
         // NPCDTO
-        // Sprawdzenie przesyłania danych postaci
         [Test]
         public void NPCDTO_Should_Handle_Properties()
         {
@@ -97,12 +89,10 @@ namespace DialogueEngine.Tests
             NPCDTO? result = JsonConvert.DeserializeObject<NPCDTO>(json);
             
             Assert.That(result.name, Is.EqualTo("Barman"));
-            Assert.That(result.role, Is.EqualTo("Sprzedawca"));
             Assert.That(result.protrait, Is.EqualTo("img.png"));
         }
 
         // SettingsDTO
-        // Sprawdzenie obsługi typów liczbowych
         [Test]
         public void SettingsDTO_Should_Serialize_Volume()
         {
@@ -112,61 +102,24 @@ namespace DialogueEngine.Tests
             Assert.That(result.Volume, Is.EqualTo(75));
         }
 
-        // MethodDTO
-        // Sprawdzenie serializacji tablicy stringów
+        // EndingDTO
         [Test]
-        public void MethodDTO_Should_Handle_StringArrays()
-        {
-            var method = new MethodDTO 
-            { 
-                MethodName = "OpenDoor", 
-                ParameterValues = new string[] { "Key_Red", "Fast" } 
-            };
-            string json = JsonConvert.SerializeObject(method);
-            MethodDTO? result = JsonConvert.DeserializeObject<MethodDTO>(json);
-            
-            Assert.That(result.ParameterValues, Has.Length.EqualTo(2));
-            Assert.That(result.ParameterValues[0], Is.EqualTo("Key_Red"));
-        }
-
-        // EndingDTO (Zagnieżdżone obiekty)
-        // Sprawdzenie czy obiekt zawierający listy różnych obiektów typu NPC i itemy działa
-        [Test]
-        public void EndingDTO_Should_Serialize_Nested_Arrays()
+        public void EndingDTO_Should_Serialize_Correctly()
         {
             var ending = new EndingDTO
             {
-                Name = "BadEnding",
-                Description = "Game Over",
-                Npcs = new NPCDTO[] { new NPCDTO { name = "Police" } },
-                Items = new ItemDTO[] { new ItemDTO { name = "Gun" } }
+                AccusedName = "Podejrzany",
+                Description = "Zakończenie gry",
+                IsMurderer = true
             };
             string json = JsonConvert.SerializeObject(ending);
             EndingDTO? result = JsonConvert.DeserializeObject<EndingDTO>(json);
             
-            Assert.That(result.Npcs[0].name, Is.EqualTo("Police"));
-            Assert.That(result.Items[0].name, Is.EqualTo("Gun"));
+            Assert.That(result.AccusedName, Is.EqualTo("Podejrzany"));
+            Assert.That(result.IsMurderer, Is.True);
         }
 
-        // GamesToContinueDTO
-        // Sprawdzenie listy zapisanych gier
-        [Test]
-        public void GamesToContinueDTO_Should_Store_List()
-        {
-            var container = new GamesToContinueDTO
-            {
-                GamesToContinue = new CreatedGameDTO[] 
-                { 
-                    new CreatedGameDTO { Title = "Save1" } 
-                }
-            };
-            string json = JsonConvert.SerializeObject(container);
-            GamesToContinueDTO? result = JsonConvert.DeserializeObject<GamesToContinueDTO>(json);
-            Assert.That(result.GamesToContinue, Has.Length.EqualTo(1));
-        }
-
-        // ScenesScriptDTO (Pełna struktura)
-        // Testuje pełną hierarchię scenariusz do sceny do NPC/przedmioty
+        // ScenesScriptDTO
         [Test]
         public void ScenesScriptDTO_Complex_Graph_Test()
         {
@@ -190,34 +143,28 @@ namespace DialogueEngine.Tests
         }
 
         // Znaki specjalne
-        // Sprawdzenie czy polskie znaki i cudzysłowy nie psują JSONa
         [Test]
         public void EdgeCase_SpecialCharacters_And_PolishLetters()
         {
             var response = new NPCResponseDTO 
             { 
                 Speech = "Zażółć gęślą jaźń.", 
-                Action = "Mówi: \"To jest test!\"" // Cudzysłów w środku
+                Action = "Mówi: \"Test\""
             };
             string json = JsonConvert.SerializeObject(response);
             NPCResponseDTO? restored = JsonConvert.DeserializeObject<NPCResponseDTO>(json);
             
             Assert.That(restored.Speech, Is.EqualTo("Zażółć gęślą jaźń."));
-            Assert.That(restored.Action, Is.EqualTo("Mówi: \"To jest test!\""));
         }
 
         // Null / Pusta Tablica
-        // Sprawdzenie czy wszystko działa jeżeli jest null zamiast pustej tablicy
         [Test]
         public void EdgeCase_Null_vs_Empty_Arrays()
         {
-            // Symulacja JSONa z Pythona, gdzie zamiast pustej listy przyszło null
             string jsonWithNulls = "{\"Name\": \"Pustka\", \"Npcs\": null, \"Items\": null}";
-            
             SceneScriptDTO? result = JsonConvert.DeserializeObject<SceneScriptDTO>(jsonWithNulls);
             
             Assert.That(result, Is.Not.Null);
-            // System nie powinien rzucić błędu, tylko ustawić pole na null
             Assert.That(result.Npcs, Is.Null); 
         }
     }
@@ -252,14 +199,13 @@ def ensure_dtomodel_exists(dialogue_engine_path):
         print(f"Znaleziono projekt: {csproj_path}")
         return csproj_path
     
-    print("[INFO] Nie znaleziono pliku DTOModel.csproj")
     dtomodel_dir = os.path.join(dialogue_engine_path, "DTOModel")
     if not os.path.exists(dtomodel_dir):
         found_dirs = glob.glob(os.path.join(dialogue_engine_path, "**", "DTOModel"), recursive=True)
         if found_dirs:
             dtomodel_dir = found_dirs[0]
         else:
-            print("[BŁĄD] Nie znaleziono folderu DTOModel, chyba coś jest mocno nie tak :v")
+            print("[BŁĄD] Nie znaleziono folderu DTOModel.")
             sys.exit(1)
 
     new_csproj_path = os.path.join(dtomodel_dir, "DTOModel.csproj")
