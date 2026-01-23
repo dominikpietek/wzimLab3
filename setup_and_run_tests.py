@@ -263,7 +263,8 @@ def run_tests(root_dir, csharp_test_dir):
     return all_passed
 
 if __name__ == "__main__":
-    current_dir = os.getcwd()
+    # Ustal ścieżkę do folderu, w którym znajduje się ten skrypt
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     try:
         subprocess.check_output(["dotnet", "--version"])
     except:
