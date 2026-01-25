@@ -1,0 +1,106 @@
+{
+  "scenes": [
+    {
+      "name": "Scena 1 - Pogorzelisko",
+	    "background": "mp-2-1i4",
+      "description": "Spalony hol pensjonatu. Zapach dymu, taśmy strażackie. Ciało Stefana znalezione na piętrze.",
+      "npcs": [
+        {
+          "name": "Teresa",
+          "role": "Właścicielka",
+          "description": "Chłodna i opanowana. Wskazuje na wadliwą instalację."
+        },
+        {
+          "name": "Paweł",
+          "role": "Strażak ochotnik",
+          "description": "Zwraca uwagę na nienaturalne rozprzestrzenianie się ognia."
+        }
+      ],
+      "items": [
+        {
+          "name": "Zamknięte drzwi pokoju",
+          "description": "Drzwi ofiary były zamknięte.",
+          "hints": "Ktoś mógł zamknąć je przed lub po pożarze."
+        }
+      ]
+    },
+    {
+      "name": "Scena 2 - Korytarz i pokoje",
+	    "background": "mp-2-2",
+      "description": "Okopcony korytarz, nadpalone drzwi, recepcja.",
+      "npcs": [
+        {
+          "name": "Karolina",
+          "role": "Pokojówka",
+          "description": "Przyznaje, że ofiara miała dużą gotówkę."
+        },
+        {
+          "name": "Henryk",
+          "role": "Sąsiad",
+          "description": "Twierdzi, że widział kogoś uciekającego tylnym wyjściem."
+        }
+      ],
+      "items": [
+        {
+          "name": "Pusta kasetka",
+          "description": "Znaleziona w pokoju Stefana.",
+          "hints": "Gotówka zniknęła po pożarze."
+        }
+      ]
+    },
+    {
+      "name": "Scena 3 - Piwnica",
+      "background": "mp-2-3",
+      "description": "Wilgotna piwnica z kanistrami i starymi dokumentami.",
+      "npcs": [
+        {
+          "name": "Paweł",
+          "role": "Strażak",
+          "description": "Odnajduje ślady świeżej benzyny."
+        },
+        {
+          "name": "Karolina",
+          "role": "Pokojówka",
+          "description": "Widziana wcześniej z kluczami do piwnicy."
+        }
+      ],
+      "items": [
+        {
+          "name": "Kanister z benzyną",
+          "description": "Prawie pusty.",
+          "hints": "Źródło podpalenia."
+        }
+      ]
+    },
+    {
+      "name": "Scena 4 - Finał",
+	    "background": "mp-2-1i4",
+      "description": "Hol pensjonatu po pożarze. Prawda wychodzi na jaw.",
+      "npcs": [
+        {
+          "name": "Młody Detektyw",
+          "role": "Gracz",
+          "description": "Analizuje motywy i zaniedbania."
+        }
+      ],
+      "items": []
+    }
+  ],
+  "endings": [
+    {
+      "accusedName": "Teresa",
+      "description": "Sprawczyni. Podpaliła budynek pensjonatu w panice po szantażu finansowym, próbując w ten sposób ukryć niewygodną prawdę. Jako właścicielka starała się odsunąć od siebie podejrzenia, wskazując na rzekomo wadliwą instalację elektryczną.",
+      "isMurderer": true
+    },
+    {
+      "accusedName": "Karolina",
+      "description": "Niesłusznie oskarżona o wzniecenie ognia. Choć dopuściła się kradzieży gotówki z kasetki Stefana, wykorzystując panujący chaos, jej działanie było podyktowane chciwością, a nie intencją zabójstwa czy podpalenia.",
+      "isMurderer": false
+    },
+    {
+      "accusedName": "Paweł",
+      "description": "Oskarżony o winę pośrednią wynikającą z nadużycia zaufania publicznego jako strażak. Jego manipulacja miejscem zdarzenia oraz zaniechanie obowiązków ratowniczych pogłębiły tragedię, jednak to nie on był inicjatorem pożaru.",
+      "isMurderer": false
+    }
+  ]
+}

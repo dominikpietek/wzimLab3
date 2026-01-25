@@ -1,0 +1,111 @@
+{
+  "scenes": [
+    {
+      "name": "Scena 1 - Odkrycie ciała",
+	    "background": "mp-1-1",
+      "description": "Wagon nr 6, zamknięty przedział. Ciało Damiana leży na łóżku. Brak ran, okno uchylone, stolik rozłożony.",
+      "npcs": [
+        {
+          "name": "Konduktorka Paulina",
+          "role": "Obsługa pociągu",
+          "description": "Opanowana, profesjonalna. Twierdzi, że ostatni patrol był o 22:00."
+        },
+        {
+          "name": "Wdowa Natalia",
+          "role": "Żona ofiary",
+          "description": "Zmęczona, spokojna. Utrzymuje, że spała całą noc."
+        }
+      ],
+      "items": [
+        {
+          "name": "Zamknięte drzwi",
+          "description": "Drzwi przedziału zamknięte od środka.",
+          "hints": "Zamek mógł zostać zamknięty po śmierci ofiary."
+        },
+        {
+          "name": "Szklanka z wodą",
+          "description": "Stoi na stoliku nocnym.",
+          "hints": "Ofiara mogła zażyć środek nasenny."
+        }
+      ]
+    },
+    {
+      "name": "Scena 2 - Korytarz i przedziały",
+	    "background": "mp-1-2",
+      "description": "Ciemny korytarz wagonu nr 6. Cisza przerywana stukotem kół.",
+      "npcs": [
+        {
+          "name": "Emil",
+          "role": "Współpasażer",
+          "description": "Nerwowy informatyk. Twierdzi, że widział konduktorkę po północy."
+        },
+        {
+          "name": "Oskar",
+          "role": "Handlarz",
+          "description": "Głośny, wścibski. Przyznaje, że sprzedał Damianowi środek na sen."
+        }
+      ],
+      "items": [
+        {
+          "name": "Tabletki uspokajające",
+          "description": "Małe opakowanie bez etykiety.",
+          "hints": "Dawka nieznanego pochodzenia, potencjalnie niebezpieczna."
+        }
+      ]
+    },
+    {
+      "name": "Scena 3 - Przedział Natalii",
+	    "background": "mp-1-3",
+      "description": "Skromny przedział. Torba podróżna stoi otwarta.",
+      "npcs": [
+        {
+          "name": "Wdowa Natalia",
+          "role": "Żona ofiary",
+          "description": "Przyznaje, że wyszła w nocy zapalić papierosa."
+        },
+        {
+          "name": "Konduktorka Paulina",
+          "role": "Obsługa pociągu",
+          "description": "Potwierdza, że widziała Natalię na korytarzu."
+        }
+      ],
+      "items": [
+        {
+          "name": "Klucz konduktorski",
+          "description": "Pasuje do zamków w wagonie.",
+          "hints": "Personel mógł mieć dostęp do przedziału po północy."
+        }
+      ]
+    },
+    {
+      "name": "Scena 4 - Finał",
+	    "background": "mp-1-4",
+      "description": "Wagon nr 6. Wszyscy podejrzani zebrani.",
+      "npcs": [
+        {
+          "name": "Młody Detektyw",
+          "role": "Gracz",
+          "description": "Łączy fakty i podejmuje decyzję."
+        }
+      ],
+      "items": []
+    }
+  ],
+  "endings": [
+    {
+      "accusedName": "Oskar",
+      "description": "Sprawca. Winny nieumyślnego spowodowania śmierci poprzez sprzedaż nielegalnego środka uspokajającego o nieznanym pochodzeniu i dawce. Damian przedawkował substancję sprzedaną przez Oskara, co doprowadziło do tragedii w zamkniętym przedziale.",
+      "isMurderer": true
+    },
+    {
+      "accusedName": "Wdowa Natalia",
+      "description": "Niesłusznie oskarżona o morderstwo. Choć przyznała się do opuszczenia przedziału w nocy, by zapalić papierosa, śledztwo wykazuje brak dowodów na jej celowe działanie, a jej nocna aktywność nie miała związku ze zgonem męża.",
+      "isMurderer": false
+    },
+    {
+      "accusedName": "Konduktorka Paulina",
+      "description": "Oskarżona o winę pośrednią wynikającą z zaniedbań systemowych. Choć posiadała klucz konduktorski i mogła wejść do przedziału, jej odpowiedzialność ogranicza się do braku reakcji na sygnały i niewystarczającej kontroli wagonu w nocy.",
+      "isMurderer": false
+    }
+  ]
+}
